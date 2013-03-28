@@ -1,0 +1,11 @@
+.ui-menu {
+	width: 150px;
+}
+
+#debug {
+	border: 1px black solid;
+}
+
+#pageContent {
+	border: 1px green solid;
+}
