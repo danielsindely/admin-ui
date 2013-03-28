@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Admin Web Interface</title>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="css/admin-ui.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/admin-ui.js"></script>
+
+</head>
+<body>
+
+	<div>
+		<ul id="menu">
+			<li><a href="#">Stations</a>
+				<ul>
+					<li><a href="#" id="buttonUpload">Upload</a></li>
+					<li><a href="#" id="buttonStations">Stations</a></li>
+					<li><a href="#" id="buttonCategories">Categories</a></li>
+					<li><a href="#" id="buttonArtists">Artists</a></li>
+				</ul></li>
+		</ul>
+	</div>
+
+	<input type="text" onkeyup="log(this.value)">
+
+	<div id="pageContent"></div>
+
+	<div id="debug"></div>
+
+</body>
+</html>
