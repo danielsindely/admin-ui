@@ -2,16 +2,16 @@ $(document).ready(function() {
 	$("#menu").menu();
 
 	$("#buttonUpload").click(function() {
-		switchPage("upload");
+		switchPage("upload", loadPageUpload);
 	});
 	$("#buttonStations").click(function() {
-		switchPage("stations");
+		switchPage("stations", loadPageStations);
 	});
 	$("#buttonCategories").click(function() {
-		switchPage("categories");
+		switchPage("categories", loadPageCategories);
 	});
 	$("#buttonArtists").click(function() {
-		switchPage("artists");
+		switchPage("artists", loadPageArtists);
 	});
 	log("page loaded");
 });
@@ -21,7 +21,40 @@ function log(text) {
 	logmezo.html(logmezo.html() + text + "<br>");
 }
 
-function switchPage(page) {
+function switchPage(page, callback) {
 	log("switching to page: " + page);
-	$("#pageContent").load("html/" + page + ".html");
+	$("#pageContent").load("html/" + page + ".html", callback);
+}
+
+function loadPageUpload() {
+	log("loadPageUpload()");
+}
+
+function loadPageStations() {
+	log("loadPageStations()");
+}
+
+function loadPageCategories() {
+	log("loadPageCategories()");
+
+	$("#tabs").tabs();
+
+	log("loading categories");
+	var urlListCategories = "http://api.staginga.we7.com/api/0.1/filterCategories?apiKey=we7int&appVersion=1";
+	$.getJSON(urlListCategories, function(data) {
+		log("data: " + data);
+		var items = [];
+		$.each(data, function(key, val) {
+			items.push('<li id="' + key + '">' + val + '</li>');
+		});
+		$('<ul/>', {
+			'class' : 'my-new-list',
+			html : items.join('')
+		}).appendTo('body');
+	});
+	log("loading categories vege");
+}
+
+function loadPageArtists() {
+	log("loadPageArtists()");
 }
