@@ -2,6 +2,11 @@
 	width: 150px;
 }
 
+#menu {
+	position: relative;
+	z-index: 10;
+}
+
 #debug {
 	border: 1px black solid;
 }

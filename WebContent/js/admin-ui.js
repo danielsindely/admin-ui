@@ -39,7 +39,6 @@ function loadPageCategories() {
 
 	$("#tabs").tabs();
 
-	log("loading categories");
 	var urlListCategories = "http://api.staginga.we7.com/api/0.1/filterCategories?apiKey=we7int&appVersion=1";
 	$.getJSON(urlListCategories, function(data) {
 		log("data: " + data);
@@ -52,7 +51,6 @@ function loadPageCategories() {
 			html : items.join('')
 		}).appendTo('body');
 	});
-	log("loading categories vege");
 }
 
 function loadPageArtists() {
